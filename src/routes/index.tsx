@@ -1,6 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Heart, Music2, Sparkles, Send, Headphones, Gift, Mic2, Check, Star } from "lucide-react";
 import logo from "@/assets/logo.png";
+import example1 from "@/assets/example-1.jpg";
+import example2 from "@/assets/example-2.jpg";
+import example3 from "@/assets/example-3.jpg";
 import { SiteHeader, SiteFooter } from "@/components/site-chrome";
 import { PLAN_LIST } from "@/lib/plans";
 
@@ -136,13 +139,24 @@ function LandingPage() {
           </div>
           <div className="grid gap-6 md:grid-cols-3">
             {[
-              { title: "Para Helena, com amor", style: "Sertanejo acústico" },
-              { title: "30 anos de Júlia", style: "Pop romântico" },
-              { title: "Nosso casamento", style: "MPB intimista" },
+              { title: "Para Helena, com amor", style: "Sertanejo acústico", image: example1 },
+              { title: "30 anos de Júlia", style: "Pop romântico", image: example2 },
+              { title: "Nosso casamento", style: "MPB intimista", image: example3 },
             ].map((ex) => (
-              <div key={ex.title} className="overflow-hidden rounded-3xl border border-border bg-card shadow-soft">
-                <div className="aspect-square bg-gradient-hero grid place-items-center">
-                  <Music2 className="h-16 w-16 text-primary-foreground/90" />
+              <div key={ex.title} className="group overflow-hidden rounded-3xl border border-border bg-card shadow-soft">
+                <div className="relative aspect-square overflow-hidden">
+                  <img
+                    src={ex.image}
+                    alt={ex.title}
+                    width={800}
+                    height={800}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 via-transparent to-transparent" />
+                  <div className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-card/90 px-3 py-1 text-xs font-medium text-foreground backdrop-blur">
+                    <Music2 className="h-3.5 w-3.5 text-primary" /> Prévia em breve
+                  </div>
                 </div>
                 <div className="p-5">
                   <h3 className="font-display text-xl">{ex.title}</h3>
@@ -150,7 +164,6 @@ function LandingPage() {
                   <div className="mt-4 h-1.5 w-full overflow-hidden rounded-full bg-secondary">
                     <div className="h-full w-1/3 bg-gradient-hero" />
                   </div>
-                  <p className="mt-2 text-xs text-muted-foreground">Prévia em breve</p>
                 </div>
               </div>
             ))}
