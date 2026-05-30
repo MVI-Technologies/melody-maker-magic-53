@@ -9,38 +9,82 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SucessoRouteImport } from './routes/sucesso'
+import { Route as CriarRouteImport } from './routes/criar'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as MusicaTokenRouteImport } from './routes/musica.$token'
 
+const SucessoRoute = SucessoRouteImport.update({
+  id: '/sucesso',
+  path: '/sucesso',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CriarRoute = CriarRouteImport.update({
+  id: '/criar',
+  path: '/criar',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MusicaTokenRoute = MusicaTokenRouteImport.update({
+  id: '/musica/$token',
+  path: '/musica/$token',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/criar': typeof CriarRoute
+  '/sucesso': typeof SucessoRoute
+  '/musica/$token': typeof MusicaTokenRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/criar': typeof CriarRoute
+  '/sucesso': typeof SucessoRoute
+  '/musica/$token': typeof MusicaTokenRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/criar': typeof CriarRoute
+  '/sucesso': typeof SucessoRoute
+  '/musica/$token': typeof MusicaTokenRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/criar' | '/sucesso' | '/musica/$token'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/criar' | '/sucesso' | '/musica/$token'
+  id: '__root__' | '/' | '/criar' | '/sucesso' | '/musica/$token'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CriarRoute: typeof CriarRoute
+  SucessoRoute: typeof SucessoRoute
+  MusicaTokenRoute: typeof MusicaTokenRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sucesso': {
+      id: '/sucesso'
+      path: '/sucesso'
+      fullPath: '/sucesso'
+      preLoaderRoute: typeof SucessoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/criar': {
+      id: '/criar'
+      path: '/criar'
+      fullPath: '/criar'
+      preLoaderRoute: typeof CriarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +92,21 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/musica/$token': {
+      id: '/musica/$token'
+      path: '/musica/$token'
+      fullPath: '/musica/$token'
+      preLoaderRoute: typeof MusicaTokenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CriarRoute: CriarRoute,
+  SucessoRoute: SucessoRoute,
+  MusicaTokenRoute: MusicaTokenRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
