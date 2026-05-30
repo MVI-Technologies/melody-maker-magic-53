@@ -275,7 +275,7 @@ function MusicCard() {
       `}</style>
 
       {/* Orbit ring behind card */}
-      <div style={{
+      <div className="orbit-spin-anim" style={{
         position: "absolute", width: 420, height: 420, borderRadius: "50%",
         border: "1px dashed rgba(124,58,237,.18)",
         animation: "orbitSpin 28s linear infinite",
@@ -289,7 +289,7 @@ function MusicCard() {
       </div>
 
       {/* Halo glow */}
-      <div style={{
+      <div className="halo-glow-anim" style={{
         position: "absolute", width: 340, height: 340, borderRadius: "50%",
         background: "radial-gradient(circle, rgba(124,58,237,.22) 0%, rgba(236,72,153,.14) 55%, transparent 75%)",
         filter: "blur(32px)",
@@ -297,21 +297,9 @@ function MusicCard() {
         pointerEvents: "none",
       }} />
 
-      {/* The card container with perspective/reflect */}
+      {/* The card container with perspective/reflect (styles migrated to class music-card-glass for mobile performance) */}
       <div 
         className="music-card-glass"
-        style={{
-          position: "relative", zIndex: 2, width: 304,
-          borderRadius: 26,
-          boxShadow: "0 32px 72px rgba(124,58,237,.15), 0 4px 20px rgba(0,0,0,.04)",
-          overflow: "hidden",
-          animation: "cardFloat 5.5s ease-in-out infinite .4s",
-          fontFamily: "inherit",
-          backdropFilter: "blur(24px)",
-          WebkitBackdropFilter: "blur(24px)",
-          // CSS mirror/reflect below card
-          WebkitBoxReflect: "below 10px linear-gradient(transparent, transparent 60%, rgba(255, 255, 255, 0.08) 85%, rgba(255, 255, 255, 0.16) 100%)",
-        }}
       >
 
         {/* Album art */}
@@ -519,7 +507,7 @@ function MusicCard() {
         { icon: Sparkles, label: "Dia das Mães",         style: { bottom:"20%",right: "-6%"  }, delay: "2.4s" },
         { icon: Music2, label: "MPB · Sertanejo · Pop",style: { bottom:"5%", left: "-8%"  }, delay: ".6s"  },
       ].map(({ icon: Icon, label, style, delay }) => (
-        <div key={label} style={{
+        <div key={label} className="tag-float-anim" style={{
           position: "absolute", ...style,
           background: "rgba(255,255,255,.82)", backdropFilter: "blur(10px)",
           border: "1px solid rgba(124,58,237,.18)",
@@ -716,13 +704,18 @@ function LandingPage() {
       {/* Global CSS styles override block */}
       <style>{`
         header {
-          backdrop-filter: blur(20px) !important;
-          -webkit-backdrop-filter: blur(20px) !important;
-          background-color: rgba(255, 255, 255, 0.72) !important;
+          background-color: rgba(255, 255, 255, 0.98) !important;
           border-bottom: 1px solid rgba(124, 58, 237, 0.08) !important;
           position: sticky !important;
           top: 0;
           z-index: 50;
+        }
+        @media (min-width: 768px) {
+          header {
+            backdrop-filter: blur(20px) !important;
+            -webkit-backdrop-filter: blur(20px) !important;
+            background-color: rgba(255, 255, 255, 0.72) !important;
+          }
         }
 
         .reveal-on-scroll {
@@ -783,6 +776,50 @@ function LandingPage() {
           border-width: 2px !important;
         }
 
+        /* Base class for MusicCard visual container */
+        .music-card-glass {
+          position: relative;
+          z-index: 2;
+          width: 304px;
+          border-radius: 26px;
+          box-shadow: 0 32px 72px rgba(124,58,237,.15), 0 4px 20px rgba(0,0,0,.04);
+          overflow: hidden;
+          animation: cardFloat 5.5s ease-in-out infinite .4s;
+          font-family: inherit;
+          border: 1px solid transparent;
+          background: linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.65)) padding-box,
+                      linear-gradient(135deg, rgba(124, 58, 237, 0.35) 0%, rgba(236, 72, 153, 0.18) 100%) border-box;
+        }
+
+        @media (min-width: 768px) {
+          .music-card-glass {
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            -webkit-box-reflect: below 10px linear-gradient(transparent, transparent 60%, rgba(255, 255, 255, 0.08) 85%, rgba(255, 255, 255, 0.16) 100%);
+          }
+        }
+
+        /* Mobile Performance Optimizations */
+        @media (max-width: 767px) {
+          .tag-float-anim {
+            animation: none !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            background: rgba(255, 255, 255, 0.95) !important;
+          }
+          .orbit-spin-anim, .halo-glow-anim {
+            display: none !important;
+          }
+          .music-card-glass {
+            animation: none !important;
+            transform: none !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            background: rgba(255, 255, 255, 0.96) !important;
+            border: 1px solid rgba(124, 58, 237, 0.15) !important;
+          }
+        }
+
         /* Accessibility: respect prefers-reduced-motion */
         @media (prefers-reduced-motion: reduce) {
           .reveal-on-scroll {
@@ -796,7 +833,7 @@ function LandingPage() {
             transition: none !important;
             opacity: 1 !important;
           }
-          .music-card-glass {
+          .music-card-glass, .tag-float-anim {
             animation: none !important;
             transform: none !important;
           }

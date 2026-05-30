@@ -255,7 +255,7 @@ function MusicCard() {
           box-shadow: 0 1px 3px rgba(0,0,0,0.15);
         }
       ` }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: {
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "orbit-spin-anim", style: {
       position: "absolute",
       width: 420,
       height: 420,
@@ -274,7 +274,7 @@ function MusicCard() {
       background: "#7C3AED",
       boxShadow: "0 0 10px rgba(124,58,237,.7)"
     } }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: {
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "halo-glow-anim", style: {
       position: "absolute",
       width: 340,
       height: 340,
@@ -284,20 +284,7 @@ function MusicCard() {
       animation: "haloGlow 6s ease-in-out infinite",
       pointerEvents: "none"
     } }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "music-card-glass", style: {
-      position: "relative",
-      zIndex: 2,
-      width: 304,
-      borderRadius: 26,
-      boxShadow: "0 32px 72px rgba(124,58,237,.15), 0 4px 20px rgba(0,0,0,.04)",
-      overflow: "hidden",
-      animation: "cardFloat 5.5s ease-in-out infinite .4s",
-      fontFamily: "inherit",
-      backdropFilter: "blur(24px)",
-      WebkitBackdropFilter: "blur(24px)",
-      // CSS mirror/reflect below card
-      WebkitBoxReflect: "below 10px linear-gradient(transparent, transparent 60%, rgba(255, 255, 255, 0.08) 85%, rgba(255, 255, 255, 0.16) 100%)"
-    }, children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "music-card-glass", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: {
         position: "relative",
         aspectRatio: "1",
@@ -575,7 +562,7 @@ function MusicCard() {
       label,
       style,
       delay
-    }) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: {
+    }) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "tag-float-anim", style: {
       position: "absolute",
       ...style,
       background: "rgba(255,255,255,.82)",
@@ -726,13 +713,18 @@ function LandingPage() {
     /* @__PURE__ */ jsxRuntimeExports.jsx(HeroSection, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx("style", { children: `
         header {
-          backdrop-filter: blur(20px) !important;
-          -webkit-backdrop-filter: blur(20px) !important;
-          background-color: rgba(255, 255, 255, 0.72) !important;
+          background-color: rgba(255, 255, 255, 0.98) !important;
           border-bottom: 1px solid rgba(124, 58, 237, 0.08) !important;
           position: sticky !important;
           top: 0;
           z-index: 50;
+        }
+        @media (min-width: 768px) {
+          header {
+            backdrop-filter: blur(20px) !important;
+            -webkit-backdrop-filter: blur(20px) !important;
+            background-color: rgba(255, 255, 255, 0.72) !important;
+          }
         }
 
         .reveal-on-scroll {
@@ -793,6 +785,50 @@ function LandingPage() {
           border-width: 2px !important;
         }
 
+        /* Base class for MusicCard visual container */
+        .music-card-glass {
+          position: relative;
+          z-index: 2;
+          width: 304px;
+          border-radius: 26px;
+          box-shadow: 0 32px 72px rgba(124,58,237,.15), 0 4px 20px rgba(0,0,0,.04);
+          overflow: hidden;
+          animation: cardFloat 5.5s ease-in-out infinite .4s;
+          font-family: inherit;
+          border: 1px solid transparent;
+          background: linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.65)) padding-box,
+                      linear-gradient(135deg, rgba(124, 58, 237, 0.35) 0%, rgba(236, 72, 153, 0.18) 100%) border-box;
+        }
+
+        @media (min-width: 768px) {
+          .music-card-glass {
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            -webkit-box-reflect: below 10px linear-gradient(transparent, transparent 60%, rgba(255, 255, 255, 0.08) 85%, rgba(255, 255, 255, 0.16) 100%);
+          }
+        }
+
+        /* Mobile Performance Optimizations */
+        @media (max-width: 767px) {
+          .tag-float-anim {
+            animation: none !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            background: rgba(255, 255, 255, 0.95) !important;
+          }
+          .orbit-spin-anim, .halo-glow-anim {
+            display: none !important;
+          }
+          .music-card-glass {
+            animation: none !important;
+            transform: none !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            background: rgba(255, 255, 255, 0.96) !important;
+            border: 1px solid rgba(124, 58, 237, 0.15) !important;
+          }
+        }
+
         /* Accessibility: respect prefers-reduced-motion */
         @media (prefers-reduced-motion: reduce) {
           .reveal-on-scroll {
@@ -806,7 +842,7 @@ function LandingPage() {
             transition: none !important;
             opacity: 1 !important;
           }
-          .music-card-glass {
+          .music-card-glass, .tag-float-anim {
             animation: none !important;
             transform: none !important;
           }
