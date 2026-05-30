@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -6,14 +6,13 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Design system — Lovetune-style romantic & emotional
- * Warm burgundy, terracotta, gold accents on cream.
- * Display: Playfair Display. Body: Inter.
+ * Design system — LoveTune-inspired: vibrant purple → pink on near-white lavender.
+ * Display + body: Plus Jakarta Sans, bold/extrabold for headings.
  */
 
 @theme inline {
-  --font-display: "Playfair Display", Georgia, serif;
-  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -48,75 +47,76 @@
   --color-cream: var(--cream);
   --color-wine: var(--wine);
 
-  --shadow-warm: 0 20px 60px -20px color-mix(in oklab, var(--primary) 35%, transparent);
-  --shadow-soft: 0 8px 30px -10px color-mix(in oklab, var(--wine) 20%, transparent);
-  --gradient-hero: linear-gradient(135deg, var(--wine) 0%, var(--primary) 60%, var(--gold) 100%);
-  --gradient-warm: linear-gradient(180deg, var(--cream) 0%, var(--background) 100%);
+  --shadow-warm: 0 20px 60px -20px color-mix(in oklab, var(--primary) 40%, transparent);
+  --shadow-soft: 0 10px 30px -12px color-mix(in oklab, var(--primary) 22%, transparent);
+  --gradient-hero: linear-gradient(135deg, oklch(0.55 0.25 295) 0%, oklch(0.62 0.24 320) 55%, oklch(0.66 0.22 350) 100%);
+  --gradient-warm: linear-gradient(180deg, oklch(0.985 0.012 300) 0%, var(--background) 100%);
 }
 
 :root {
-  --radius: 0.75rem;
-  /* Cream background, deep wine foreground */
-  --background: oklch(0.975 0.012 70);
-  --foreground: oklch(0.22 0.06 25);
+  --radius: 1rem;
+  /* Near-white lavender background, deep ink foreground */
+  --background: oklch(0.99 0.006 300);
+  --foreground: oklch(0.20 0.03 285);
 
-  --card: oklch(0.99 0.008 70);
-  --card-foreground: oklch(0.22 0.06 25);
-  --popover: oklch(0.99 0.008 70);
-  --popover-foreground: oklch(0.22 0.06 25);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.20 0.03 285);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.20 0.03 285);
 
-  /* Primary: terracotta */
-  --primary: oklch(0.58 0.16 35);
-  --primary-foreground: oklch(0.98 0.008 70);
+  /* Primary: vibrant violet */
+  --primary: oklch(0.55 0.25 295);
+  --primary-foreground: oklch(0.99 0.006 300);
 
-  /* Secondary: warm sand */
-  --secondary: oklch(0.93 0.025 70);
-  --secondary-foreground: oklch(0.3 0.07 30);
+  /* Secondary: soft lavender */
+  --secondary: oklch(0.95 0.025 300);
+  --secondary-foreground: oklch(0.30 0.07 295);
 
-  --muted: oklch(0.94 0.018 70);
-  --muted-foreground: oklch(0.48 0.04 35);
+  --muted: oklch(0.96 0.015 300);
+  --muted-foreground: oklch(0.48 0.04 295);
 
-  --accent: oklch(0.92 0.045 75);
-  --accent-foreground: oklch(0.3 0.08 30);
+  /* Accent: magenta pink */
+  --accent: oklch(0.66 0.22 350);
+  --accent-foreground: oklch(0.99 0.006 300);
 
-  --destructive: oklch(0.55 0.22 25);
-  --destructive-foreground: oklch(0.98 0.008 70);
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(0.99 0.006 300);
 
-  --border: oklch(0.88 0.022 60);
-  --input: oklch(0.9 0.02 60);
-  --ring: oklch(0.58 0.16 35);
+  --border: oklch(0.92 0.018 300);
+  --input: oklch(0.93 0.02 300);
+  --ring: oklch(0.55 0.25 295);
 
-  /* Custom tokens */
-  --gold: oklch(0.78 0.13 80);
-  --gold-foreground: oklch(0.22 0.06 25);
-  --cream: oklch(0.96 0.02 80);
-  --wine: oklch(0.32 0.1 25);
+  /* Aliases (legacy token names kept so existing classes still resolve) */
+  --gold: oklch(0.66 0.22 350); /* repurposed as pink accent */
+  --gold-foreground: oklch(0.99 0.006 300);
+  --cream: oklch(0.97 0.025 305); /* soft lavender */
+  --wine: oklch(0.42 0.18 295);   /* deep violet */
 }
 
 .dark {
-  --background: oklch(0.18 0.04 25);
-  --foreground: oklch(0.95 0.012 70);
-  --card: oklch(0.22 0.05 25);
-  --card-foreground: oklch(0.95 0.012 70);
-  --popover: oklch(0.22 0.05 25);
-  --popover-foreground: oklch(0.95 0.012 70);
-  --primary: oklch(0.7 0.16 40);
-  --primary-foreground: oklch(0.15 0.04 25);
-  --secondary: oklch(0.28 0.05 25);
-  --secondary-foreground: oklch(0.95 0.012 70);
-  --muted: oklch(0.26 0.04 25);
-  --muted-foreground: oklch(0.7 0.03 50);
-  --accent: oklch(0.32 0.07 30);
-  --accent-foreground: oklch(0.95 0.012 70);
+  --background: oklch(0.16 0.03 285);
+  --foreground: oklch(0.97 0.012 300);
+  --card: oklch(0.20 0.04 285);
+  --card-foreground: oklch(0.97 0.012 300);
+  --popover: oklch(0.20 0.04 285);
+  --popover-foreground: oklch(0.97 0.012 300);
+  --primary: oklch(0.68 0.22 295);
+  --primary-foreground: oklch(0.15 0.03 285);
+  --secondary: oklch(0.26 0.05 290);
+  --secondary-foreground: oklch(0.97 0.012 300);
+  --muted: oklch(0.24 0.04 290);
+  --muted-foreground: oklch(0.72 0.03 295);
+  --accent: oklch(0.72 0.2 345);
+  --accent-foreground: oklch(0.15 0.03 285);
   --destructive: oklch(0.6 0.22 25);
-  --destructive-foreground: oklch(0.98 0.008 70);
-  --border: oklch(0.32 0.05 25);
-  --input: oklch(0.3 0.05 25);
-  --ring: oklch(0.7 0.16 40);
-  --gold: oklch(0.82 0.14 80);
-  --gold-foreground: oklch(0.18 0.04 25);
-  --cream: oklch(0.95 0.02 70);
-  --wine: oklch(0.4 0.12 25);
+  --destructive-foreground: oklch(0.97 0.012 300);
+  --border: oklch(0.30 0.05 290);
+  --input: oklch(0.28 0.05 290);
+  --ring: oklch(0.68 0.22 295);
+  --gold: oklch(0.72 0.2 345);
+  --gold-foreground: oklch(0.15 0.03 285);
+  --cream: oklch(0.22 0.04 290);
+  --wine: oklch(0.48 0.2 295);
 }
 
 @layer base {
@@ -130,12 +130,13 @@
   }
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
+    font-weight: 800;
+    letter-spacing: -0.025em;
   }
 }
 
 @layer utilities {
-  .font-display { font-family: var(--font-display); }
+  .font-display { font-family: var(--font-display); font-weight: 800; }
   .text-gradient-warm {
     background: var(--gradient-hero);
     -webkit-background-clip: text;
@@ -146,4 +147,12 @@
   .shadow-soft { box-shadow: var(--shadow-soft); }
   .bg-gradient-hero { background: var(--gradient-hero); }
   .bg-gradient-warm { background: var(--gradient-warm); }
+  /* Soft glow blobs used behind the hero */
+  .blob {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(80px);
+    opacity: 0.55;
+    pointer-events: none;
+  }
 }
