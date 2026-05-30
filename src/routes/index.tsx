@@ -320,13 +320,13 @@ function MusicCard() {
           {/* IA badge */}
           <div style={{
             position: "absolute", top: 12, left: 12,
-            background: "rgba(0,0,0,.45)", backdropFilter: "blur(8px)",
+            background: "rgba(255,255,255,0.72)", backdropFilter: "blur(8px)",
             borderRadius: 20, padding: "4px 10px",
-            fontSize: 11, fontWeight: 700, color: "#fff", letterSpacing: ".06em",
-            border: "1px solid rgba(255,255,255,.2)",
+            fontSize: 11, fontWeight: 700, color: "#4C1D95", letterSpacing: ".06em",
+            border: "1px solid rgba(124,58,237,0.15)",
             display: "flex", alignItems: "center", gap: 4
           }}>
-            <Sparkles className="h-3 w-3 text-[#F59E0B]" />
+            <Sparkles className="h-3 w-3 text-[#F59E0B] fill-[#F59E0B]" />
             <span>Melodia inesquecível</span>
           </div>
 
@@ -335,16 +335,16 @@ function MusicCard() {
             onClick={() => setLiked(l => !l)}
             style={{
               position: "absolute", top: 10, right: 12,
-              background: "rgba(0,0,0,.45)", backdropFilter: "blur(8px)",
-              border: "1px solid rgba(255,255,255,.2)", borderRadius: "50%",
+              background: "rgba(255,255,255,0.72)", backdropFilter: "blur(8px)",
+              border: "1px solid rgba(124,58,237,0.15)", borderRadius: "50%",
               width: 32, height: 32, cursor: "pointer",
               display: "flex", alignItems: "center", justifyContent: "center",
               transition: "transform .2s, background .2s",
             }}
-            className="hover:scale-110 active:scale-95"
+            className="hover:scale-110 active:scale-95 shadow-sm"
           >
             <Heart 
-              className={`h-4.5 w-4.5 transition-colors ${liked ? "fill-rose-500 text-rose-500" : "text-white"}`} 
+              className={`h-4.5 w-4.5 transition-colors ${liked ? "fill-rose-500 text-rose-500" : "text-[#7C3AED]"}`} 
             />
           </button>
 
@@ -354,7 +354,7 @@ function MusicCard() {
               <button key={i} onClick={() => { setSongIdx(i); setProgress(6); }}
                 style={{
                   width: i === songIdx ? 18 : 6, height: 6, borderRadius: 3,
-                  background: i === songIdx ? "#fff" : "rgba(255,255,255,0.45)",
+                  background: i === songIdx ? "#7C3AED" : "rgba(124,58,237,0.35)",
                   border: "none", cursor: "pointer", padding: 0, transition: "all .28s",
                 }} />
             ))}
