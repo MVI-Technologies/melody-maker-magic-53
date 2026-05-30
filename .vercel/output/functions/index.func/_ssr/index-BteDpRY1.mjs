@@ -616,8 +616,7 @@ function HeroSection() {
           " ",
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-warm font-medium", children: "inesquecíveis e personalizadas" }),
           " ",
-          "para quem ",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "whitespace-nowrap", children: "você ama" })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "whitespace-nowrap", children: "para quem ama" })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "animate-fade-in-up mt-4 max-w-lg text-sm md:text-base text-[#4C4B63] font-medium leading-relaxed", style: {
           animationDelay: "150ms"

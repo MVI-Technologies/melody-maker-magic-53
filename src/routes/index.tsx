@@ -567,7 +567,7 @@ export function HeroSection() {
             >
               Crie músicas{" "}
               <span className="text-gradient-warm font-medium">inesquecíveis e personalizadas</span>{" "}
-              para quem <span className="whitespace-nowrap">você ama</span>
+              <span className="whitespace-nowrap">para quem ama</span>
             </h1>
 
             <p 
