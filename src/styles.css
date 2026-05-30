@@ -155,4 +155,14 @@
     opacity: 0.55;
     pointer-events: none;
   }
+  @keyframes float-y {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-22px) translateX(8px); }
+  }
+  @keyframes float-y-2 {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(18px) translateX(-10px); }
+  }
+  .animate-float-slow { animation: float-y 7s ease-in-out infinite; }
+  .animate-float-slower { animation: float-y-2 11s ease-in-out infinite; }
 }
