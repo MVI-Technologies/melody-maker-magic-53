@@ -16,9 +16,9 @@ import "crypto";
 import "async_hooks";
 import "stream";
 import "../_libs/isbot.mjs";
-const passionAsset = "/assets/passion-BrlnKKfq.png";
-const romanceAsset = "/assets/romance-CjBO9Acu.png";
-const anniversaryAsset = "/assets/anniversary-CsIKjjM1.png";
+const passionLightAsset = "/assets/passion_light-CRaPx5bQ.png";
+const romanceLightAsset = "/assets/romance_light-7rJvqoOw.png";
+const anniversaryLightAsset = "/assets/anniversary_light-CMYRvo-M.png";
 const example1 = "/assets/example-1-BVrGo7Y2.jpg";
 const example2 = "/assets/example-2-CDOslRbE.jpg";
 const example3 = "/assets/example-3-CCKWOXu1.jpg";
@@ -144,19 +144,19 @@ function MusicCard() {
     sub: "Aniversário · Sertanejo acústico",
     icon: Heart,
     bg: "linear-gradient(135deg,#7C3AED 0%,#EC4899 100%)",
-    image: passionAsset
+    image: passionLightAsset
   }, {
     title: "Nosso primeiro olhar",
     sub: "Casamento · MPB intimista",
     icon: Music2,
     bg: "linear-gradient(135deg,#6366F1 0%,#7C3AED 100%)",
-    image: romanceAsset
+    image: romanceLightAsset
   }, {
     title: "30 anos de Júlia",
     sub: "Aniversário · Pop romântico",
     icon: Sparkles,
     bg: "linear-gradient(135deg,#EC4899 0%,#F59E0B 100%)",
-    image: anniversaryAsset
+    image: anniversaryLightAsset
   }];
   const song = songs[songIdx];
   const tick = (t) => {

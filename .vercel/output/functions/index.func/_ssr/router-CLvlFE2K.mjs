@@ -123,7 +123,7 @@ function RootComponent() {
     /* @__PURE__ */ jsxRuntimeExports.jsx(Toaster, { position: "top-center", richColors: true })
   ] });
 }
-const $$splitComponentImporter$3 = () => import("./sucesso-yGGjHUxF.mjs");
+const $$splitComponentImporter$3 = () => import("./sucesso-DJGMmnos.mjs");
 const Route$3 = createFileRoute("/sucesso")({
   validateSearch: objectType({
     token: stringType().min(8)
@@ -138,7 +138,7 @@ const Route$3 = createFileRoute("/sucesso")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-const $$splitComponentImporter$2 = () => import("./criar-cNqI5UqK.mjs");
+const $$splitComponentImporter$2 = () => import("./criar-CNQ4blDy.mjs");
 const searchSchema = objectType({
   plan: enumType(["essencial", "completa", "premium"]).optional()
 });
@@ -154,7 +154,7 @@ const Route$2 = createFileRoute("/criar")({
   validateSearch: searchSchema,
   component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-const $$splitComponentImporter$1 = () => import("./index-Byi_gyXw.mjs");
+const $$splitComponentImporter$1 = () => import("./index-C97kdubz.mjs");
 const Route$1 = createFileRoute("/")({
   head: () => ({
     meta: [{
@@ -175,7 +175,7 @@ const Route$1 = createFileRoute("/")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-const $$splitComponentImporter = () => import("./musica._token-BHDx1C02.mjs");
+const $$splitComponentImporter = () => import("./musica._token-Dp4TaQ5F.mjs");
 const Route = createFileRoute("/musica/$token")({
   head: () => ({
     meta: [{

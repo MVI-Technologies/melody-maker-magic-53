@@ -33,9 +33,9 @@ import example1 from "@/assets/example-1.jpg";
 import example2 from "@/assets/example-2.jpg";
 import example3 from "@/assets/example-3.jpg";
 import letter from "@/assets/letter.jpg";
-import passionAsset from "@/assets/passion.png";
-import romanceAsset from "@/assets/romance.png";
-import anniversaryAsset from "@/assets/anniversary.png";
+import passionLightAsset from "@/assets/passion_light.png";
+import romanceLightAsset from "@/assets/romance_light.png";
+import anniversaryLightAsset from "@/assets/anniversary_light.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -164,9 +164,9 @@ function MusicCard() {
   const lastTRef = useRef<number | null>(null);
 
   const songs = [
-    { title: "Para Helena, com amor", sub: "Aniversário · Sertanejo acústico", icon: Heart, bg: "linear-gradient(135deg,#7C3AED 0%,#EC4899 100%)", image: passionAsset },
-    { title: "Nosso primeiro olhar", sub: "Casamento · MPB intimista", icon: Music2, bg: "linear-gradient(135deg,#6366F1 0%,#7C3AED 100%)", image: romanceAsset },
-    { title: "30 anos de Júlia", sub: "Aniversário · Pop romântico", icon: Sparkles, bg: "linear-gradient(135deg,#EC4899 0%,#F59E0B 100%)", image: anniversaryAsset },
+    { title: "Para Helena, com amor", sub: "Aniversário · Sertanejo acústico", icon: Heart, bg: "linear-gradient(135deg,#7C3AED 0%,#EC4899 100%)", image: passionLightAsset },
+    { title: "Nosso primeiro olhar", sub: "Casamento · MPB intimista", icon: Music2, bg: "linear-gradient(135deg,#6366F1 0%,#7C3AED 100%)", image: romanceLightAsset },
+    { title: "30 anos de Júlia", sub: "Aniversário · Pop romântico", icon: Sparkles, bg: "linear-gradient(135deg,#EC4899 0%,#F59E0B 100%)", image: anniversaryLightAsset },
   ];
   const song = songs[songIdx];
 
