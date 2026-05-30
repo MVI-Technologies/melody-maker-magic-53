@@ -621,14 +621,14 @@ function HeroSection() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "animate-fade-in-up mt-4 max-w-lg text-sm md:text-base text-[#4C4B63] font-medium leading-relaxed", style: {
           animationDelay: "150ms"
         }, children: "Transforme seus sentimentos em uma canção única feita por inteligência artificial. O presente perfeito para os momentos especiais." }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "animate-fade-in-up mt-6 flex flex-wrap items-center gap-3", style: {
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "animate-fade-in-up mt-6 flex flex-wrap items-center gap-2 sm:gap-3", style: {
           animationDelay: "300ms"
         }, children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/criar", className: "cta-main inline-flex h-11 items-center justify-center gap-2 rounded-full bg-gradient-hero px-8 text-xs font-semibold text-primary-foreground shadow-warm", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/criar", className: "cta-main inline-flex h-11 items-center justify-center gap-1.5 sm:gap-2 rounded-full bg-gradient-hero px-4 sm:px-8 text-xs font-semibold text-primary-foreground shadow-warm", children: [
             "Criar minha música ",
             /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowRight, { className: "h-4 w-4" })
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#exemplos", className: "cta-ghost inline-flex h-11 items-center justify-center gap-2 rounded-full border border-border bg-card/85 px-8 text-xs font-semibold text-foreground backdrop-blur", children: "Ouvir exemplos" })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#exemplos", className: "cta-ghost inline-flex h-11 items-center justify-center gap-1.5 sm:gap-2 rounded-full border border-border bg-card/85 px-4 sm:px-8 text-xs font-semibold text-foreground backdrop-blur", children: "Ouvir exemplos" })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "animate-fade-in-up mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-[#4C4B63] font-semibold", style: {
           animationDelay: "450ms"

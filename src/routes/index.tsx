@@ -580,18 +580,18 @@ export function HeroSection() {
 
             {/* CTAs */}
             <div 
-              className="animate-fade-in-up mt-6 flex flex-wrap items-center gap-3"
+              className="animate-fade-in-up mt-6 flex flex-wrap items-center gap-2 sm:gap-3"
               style={{ animationDelay: "300ms" }}
             >
               <Link
                 to="/criar"
-                className="cta-main inline-flex h-11 items-center justify-center gap-2 rounded-full bg-gradient-hero px-8 text-xs font-semibold text-primary-foreground shadow-warm"
+                className="cta-main inline-flex h-11 items-center justify-center gap-1.5 sm:gap-2 rounded-full bg-gradient-hero px-4 sm:px-8 text-xs font-semibold text-primary-foreground shadow-warm"
               >
                 Criar minha música <ArrowRight className="h-4 w-4" />
               </Link>
               <a
                 href="#exemplos"
-                className="cta-ghost inline-flex h-11 items-center justify-center gap-2 rounded-full border border-border bg-card/85 px-8 text-xs font-semibold text-foreground backdrop-blur"
+                className="cta-ghost inline-flex h-11 items-center justify-center gap-1.5 sm:gap-2 rounded-full border border-border bg-card/85 px-4 sm:px-8 text-xs font-semibold text-foreground backdrop-blur"
               >
                 Ouvir exemplos
               </a>
