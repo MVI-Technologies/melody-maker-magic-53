@@ -81,7 +81,7 @@ function getResponse() {
 }
 var HEADERS = { TSS_SHELL: "X-TSS_SHELL" };
 async function getStartManifest(matchedRoutes) {
-  const { tsrStartManifest } = await import("../_tanstack-start-manifest_v-gmyjCuE3.mjs");
+  const { tsrStartManifest } = await import("../_tanstack-start-manifest_v-iHwulkAF.mjs");
   const startManifest = tsrStartManifest();
   const rootRoute = startManifest.routes[rootRouteId] = startManifest.routes[rootRouteId] || {};
   rootRoute.assets = rootRoute.assets || [];
@@ -111,11 +111,11 @@ async function getStartManifest(matchedRoutes) {
 const manifest = {
   "7f92d135aa3763ddd5bf6d4d9f84832b6b591cbaa35dcc4048b4b1beed8e7bf3": {
     functionName: "createOrder_createServerFn_handler",
-    importer: () => import("./orders.functions-CWQZWzIY.mjs")
+    importer: () => import("./orders.functions-BtAypQtf.mjs")
   },
   "e40ccc975bc24c952c0fab85be305e7810348730dc76906af0792e3377551cfe": {
     functionName: "getOrderStatus_createServerFn_handler",
-    importer: () => import("./orders.functions-CWQZWzIY.mjs")
+    importer: () => import("./orders.functions-BtAypQtf.mjs")
   }
 };
 async function getServerFnById(id, access) {
@@ -874,7 +874,7 @@ var baseManifestPromise;
 var cachedFinalManifestPromise;
 async function loadEntries() {
   const [routerEntry, startEntry, pluginAdapters] = await Promise.all([
-    import("./router-vWfBNAL1.mjs").then((n) => n.r),
+    import("./router-Cn-ZwNxS.mjs").then((n) => n.r),
     import("./start-BM2dM3TI.mjs"),
     import("../__23tanstack-start-plugin-adapters-Cwee5PKy.mjs")
   ]);

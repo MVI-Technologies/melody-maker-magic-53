@@ -320,13 +320,15 @@ function MusicCard() {
           {/* IA badge */}
           <div style={{
             position: "absolute", top: 12, left: 12,
-            background: "rgba(255,255,255,0.72)", backdropFilter: "blur(8px)",
-            borderRadius: 20, padding: "4px 10px",
-            fontSize: 11, fontWeight: 700, color: "#4C1D95", letterSpacing: ".06em",
-            border: "1px solid rgba(124,58,237,0.15)",
-            display: "flex", alignItems: "center", gap: 4
+            background: "#ffffff",
+            borderRadius: 20, padding: "5px 12px",
+            fontSize: 11, fontWeight: 800, color: "#4C1D95", letterSpacing: ".06em",
+            border: "1px solid rgba(124,58,237,0.22)",
+            boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+            display: "flex", alignItems: "center", gap: 5,
+            zIndex: 10
           }}>
-            <Sparkles className="h-3 w-3 text-[#F59E0B] fill-[#F59E0B]" />
+            <Sparkles className="h-3.5 w-3.5 text-[#F59E0B] fill-[#F59E0B]" />
             <span>Melodia inesquecível</span>
           </div>
 
@@ -335,13 +337,15 @@ function MusicCard() {
             onClick={() => setLiked(l => !l)}
             style={{
               position: "absolute", top: 10, right: 12,
-              background: "rgba(255,255,255,0.72)", backdropFilter: "blur(8px)",
-              border: "1px solid rgba(124,58,237,0.15)", borderRadius: "50%",
-              width: 32, height: 32, cursor: "pointer",
+              background: "#ffffff",
+              border: "1px solid rgba(124,58,237,0.22)", borderRadius: "50%",
+              width: 34, height: 34, cursor: "pointer",
               display: "flex", alignItems: "center", justifyContent: "center",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
               transition: "transform .2s, background .2s",
+              zIndex: 10
             }}
-            className="hover:scale-110 active:scale-95 shadow-sm"
+            className="hover:scale-110 active:scale-95 shadow-md"
           >
             <Heart 
               className={`h-4.5 w-4.5 transition-colors ${liked ? "fill-rose-500 text-rose-500" : "text-[#7C3AED]"}`} 
@@ -553,14 +557,14 @@ export function HeroSection() {
       <div className="blob left-[20%] bottom-[-15%] h-[400px] w-[400px] bg-primary/30" />
 
       {/* Hero container */}
-      <div className="container relative mx-auto max-w-6xl px-6 pt-4 pb-12 md:pt-6 md:pb-16">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div className="container relative mx-auto max-w-6xl px-6 pt-8 pb-12 md:pt-10 md:pb-16">
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
 
           {/* ── LEFT COPY (with sequenced fade-in slide-up) ── */}
-          <div className="flex flex-col items-start">
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left w-full">
 
             <h1 
-              className="animate-fade-in-up font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1] sm:leading-[1.08] tracking-tight text-foreground"
+              className="animate-fade-in-up font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.15] sm:leading-[1.08] tracking-tight text-foreground text-center lg:text-left mx-auto lg:mx-0"
               style={{ 
                 fontFeatureSettings: '"ss01"', 
                 letterSpacing: "-0.03em",
@@ -573,7 +577,7 @@ export function HeroSection() {
             </h1>
 
             <p 
-              className="animate-fade-in-up mt-4 max-w-lg text-sm md:text-base text-[#4C4B63] font-medium leading-relaxed"
+              className="animate-fade-in-up mt-4 max-w-lg text-sm md:text-base text-[#4C4B63] font-medium leading-relaxed mx-auto lg:mx-0 text-center lg:text-left"
               style={{ animationDelay: "150ms" }}
             >
               Transforme seus sentimentos em uma canção única feita por inteligência artificial.
@@ -582,18 +586,18 @@ export function HeroSection() {
 
             {/* CTAs */}
             <div 
-              className="animate-fade-in-up mt-6 flex flex-wrap items-center gap-2 sm:gap-3"
+              className="animate-fade-in-up mt-6 flex w-full max-w-sm sm:max-w-md items-center gap-2.5 sm:gap-3 justify-center lg:justify-start mx-auto lg:mx-0"
               style={{ animationDelay: "300ms" }}
             >
               <Link
                 to="/criar"
-                className="cta-main inline-flex h-11 items-center justify-center gap-1.5 sm:gap-2 rounded-full bg-gradient-hero px-4 sm:px-8 text-xs font-semibold text-primary-foreground shadow-warm"
+                className="cta-main flex-1 lg:flex-initial inline-flex h-11 items-center justify-center gap-1 sm:gap-2 rounded-full bg-gradient-hero px-3 sm:px-8 text-[11px] sm:text-xs font-semibold text-primary-foreground shadow-warm text-center justify-center whitespace-nowrap"
               >
-                Criar minha música <ArrowRight className="h-4 w-4" />
+                Criar música <ArrowRight className="h-3.5 w-3.5" />
               </Link>
               <a
                 href="#exemplos"
-                className="cta-ghost inline-flex h-11 items-center justify-center gap-1.5 sm:gap-2 rounded-full border border-border bg-card/85 px-4 sm:px-8 text-xs font-semibold text-foreground backdrop-blur"
+                className="cta-ghost flex-1 lg:flex-initial inline-flex h-11 items-center justify-center gap-1 sm:gap-2 rounded-full border border-border bg-card/85 px-3 sm:px-8 text-[11px] sm:text-xs font-semibold text-foreground backdrop-blur text-center justify-center whitespace-nowrap"
               >
                 Ouvir exemplos
               </a>
@@ -601,7 +605,7 @@ export function HeroSection() {
 
             {/* Stars + count */}
             <div 
-              className="animate-fade-in-up mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-[#4C4B63] font-semibold"
+              className="animate-fade-in-up mt-5 flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 text-xs text-[#4C4B63] font-semibold mx-auto lg:mx-0"
               style={{ animationDelay: "450ms" }}
             >
               <div className="flex items-center gap-1">
@@ -831,6 +835,14 @@ function LandingPage() {
             -webkit-backdrop-filter: none !important;
             background: rgba(255, 255, 255, 0.96) !important;
             border: 1px solid rgba(124, 58, 237, 0.15) !important;
+          }
+          .blob {
+            filter: blur(60px) !important;
+            opacity: 0.14 !important;
+            transform: scale(0.65) !important;
+          }
+          .blob:first-of-type {
+            display: none !important;
           }
         }
 
