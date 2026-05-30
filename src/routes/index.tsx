@@ -36,6 +36,7 @@ import letter from "@/assets/letter.jpg";
 import passionLightAsset from "@/assets/passion_light.png";
 import romanceLightAsset from "@/assets/romance_light.png";
 import anniversaryLightAsset from "@/assets/anniversary_light.png";
+import heroBgLight from "@/assets/hero_bg_light.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -533,6 +534,19 @@ function MusicCard() {
 export function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-background">
+      {/* Premium minimal soundwave light-themed background illustration */}
+      <div 
+        style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: `url(${heroBgLight})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: 0.38,
+          pointerEvents: "none",
+          zIndex: 0
+        }}
+      />
       {/* Original blobs — kept exactly */}
       <div className="blob left-[-10%] top-[-10%] h-[480px] w-[480px] bg-primary/40" />
       <div className="blob right-[-10%] top-[20%] h-[520px] w-[520px] bg-accent/40" />

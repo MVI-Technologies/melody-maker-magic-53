@@ -19,6 +19,7 @@ import "../_libs/isbot.mjs";
 const passionLightAsset = "/assets/passion_light-CRaPx5bQ.png";
 const romanceLightAsset = "/assets/romance_light-7rJvqoOw.png";
 const anniversaryLightAsset = "/assets/anniversary_light-CMYRvo-M.png";
+const heroBgLight = "/assets/hero_bg_light-DWFQcfQL.png";
 const example1 = "/assets/example-1-BVrGo7Y2.jpg";
 const example2 = "/assets/example-2-CDOslRbE.jpg";
 const example3 = "/assets/example-3-CCKWOXu1.jpg";
@@ -589,6 +590,16 @@ function MusicCard() {
 }
 function HeroSection() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "relative overflow-hidden bg-background", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: {
+      position: "absolute",
+      inset: 0,
+      backgroundImage: `url(${heroBgLight})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      opacity: 0.38,
+      pointerEvents: "none",
+      zIndex: 0
+    } }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "blob left-[-10%] top-[-10%] h-[480px] w-[480px] bg-primary/40" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "blob right-[-10%] top-[20%] h-[520px] w-[520px] bg-accent/40" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "blob left-[20%] bottom-[-15%] h-[400px] w-[400px] bg-primary/30" }),
