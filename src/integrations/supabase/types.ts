@@ -14,7 +14,98 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      orders: {
+        Row: {
+          amount_cents: number
+          briefing: Json
+          created_at: string
+          customer_email: string
+          customer_name: string
+          customer_phone: string | null
+          download_token: string
+          id: string
+          plan: string
+          status: string
+          stripe_session_id: string | null
+          updated_at: string
+        }
+        Insert: {
+          amount_cents: number
+          briefing?: Json
+          created_at?: string
+          customer_email: string
+          customer_name: string
+          customer_phone?: string | null
+          download_token?: string
+          id?: string
+          plan: string
+          status?: string
+          stripe_session_id?: string | null
+          updated_at?: string
+        }
+        Update: {
+          amount_cents?: number
+          briefing?: Json
+          created_at?: string
+          customer_email?: string
+          customer_name?: string
+          customer_phone?: string | null
+          download_token?: string
+          id?: string
+          plan?: string
+          status?: string
+          stripe_session_id?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      songs: {
+        Row: {
+          audio_url: string | null
+          created_at: string
+          duration_seconds: number | null
+          id: string
+          image_url: string | null
+          lyrics: string | null
+          order_id: string
+          status: string
+          suno_task_id: string | null
+          title: string | null
+        }
+        Insert: {
+          audio_url?: string | null
+          created_at?: string
+          duration_seconds?: number | null
+          id?: string
+          image_url?: string | null
+          lyrics?: string | null
+          order_id: string
+          status?: string
+          suno_task_id?: string | null
+          title?: string | null
+        }
+        Update: {
+          audio_url?: string | null
+          created_at?: string
+          duration_seconds?: number | null
+          id?: string
+          image_url?: string | null
+          lyrics?: string | null
+          order_id?: string
+          status?: string
+          suno_task_id?: string | null
+          title?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "songs_order_id_fkey"
+            columns: ["order_id"]
+            isOneToOne: false
+            referencedRelation: "orders"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
