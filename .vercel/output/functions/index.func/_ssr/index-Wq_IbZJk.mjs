@@ -607,7 +607,7 @@ function HeroSection() {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "blob left-[20%] bottom-[-15%] h-[400px] w-[400px] bg-primary/30" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "container relative mx-auto max-w-6xl px-6 pt-4 pb-12 md:pt-6 md:pb-16", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid items-center gap-12 lg:grid-cols-2 lg:gap-16", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-start", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "animate-fade-in-up font-display text-4xl leading-[1.08] tracking-tight md:text-5xl lg:text-6xl text-foreground", style: {
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "animate-fade-in-up font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1] sm:leading-[1.08] tracking-tight text-foreground", style: {
           fontFeatureSettings: '"ss01"',
           letterSpacing: "-0.03em",
           animationDelay: "0ms"
@@ -616,7 +616,8 @@ function HeroSection() {
           " ",
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-warm font-medium", children: "inesquecíveis e personalizadas" }),
           " ",
-          "para quem você ama"
+          "para quem ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "whitespace-nowrap", children: "você ama" })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "animate-fade-in-up mt-4 max-w-lg text-sm md:text-base text-[#4C4B63] font-medium leading-relaxed", style: {
           animationDelay: "150ms"

@@ -557,9 +557,8 @@ export function HeroSection() {
           {/* ── LEFT COPY (with sequenced fade-in slide-up) ── */}
           <div className="flex flex-col items-start">
 
-            {/* Headline */}
             <h1 
-              className="animate-fade-in-up font-display text-4xl leading-[1.08] tracking-tight md:text-5xl lg:text-6xl text-foreground"
+              className="animate-fade-in-up font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1] sm:leading-[1.08] tracking-tight text-foreground"
               style={{ 
                 fontFeatureSettings: '"ss01"', 
                 letterSpacing: "-0.03em",
@@ -568,7 +567,7 @@ export function HeroSection() {
             >
               Crie músicas{" "}
               <span className="text-gradient-warm font-medium">inesquecíveis e personalizadas</span>{" "}
-              para quem você ama
+              para quem <span className="whitespace-nowrap">você ama</span>
             </h1>
 
             <p 
