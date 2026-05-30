@@ -265,22 +265,89 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="container mx-auto px-4 pb-24">
-        <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-hero p-12 text-center shadow-warm md:p-16">
-          <div className="blob right-[-10%] top-[-30%] h-[300px] w-[300px] bg-white/20" />
-          <h2 className="relative font-display text-4xl text-primary-foreground md:text-5xl">
-            Pronto para emocionar alguém especial?
-          </h2>
-          <p className="relative mx-auto mt-4 max-w-xl text-primary-foreground/90">
-            Em poucos minutos você começa a transformar sentimentos em melodia.
-          </p>
-          <Link
-            to="/criar"
-            className="relative mt-8 inline-flex h-12 items-center justify-center rounded-full bg-card px-8 text-sm font-semibold text-primary shadow-soft transition hover:translate-y-[-1px]"
-          >
-            Criar minha música agora
-          </Link>
+      {/* CTA — premium, glassy, alive */}
+      <section className="container mx-auto px-4 pb-28 pt-4">
+        <div className="group relative overflow-hidden rounded-[2.75rem] border border-white/15 bg-gradient-hero px-6 py-20 text-center shadow-warm md:px-16 md:py-28">
+          {/* Multi-layer atmosphere */}
+          <div
+            className="pointer-events-none absolute inset-0 opacity-60"
+            style={{
+              background:
+                "radial-gradient(60% 50% at 20% 10%, rgba(255,255,255,0.35), transparent 60%), radial-gradient(50% 50% at 85% 20%, rgba(236,72,153,0.55), transparent 65%), radial-gradient(70% 60% at 50% 110%, rgba(124,58,237,0.6), transparent 60%)",
+            }}
+          />
+          {/* Subtle grid */}
+          <div
+            className="pointer-events-none absolute inset-0 opacity-[0.08]"
+            style={{
+              backgroundImage:
+                "linear-gradient(rgba(255,255,255,.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.8) 1px, transparent 1px)",
+              backgroundSize: "44px 44px",
+              maskImage: "radial-gradient(ellipse at center, black 40%, transparent 75%)",
+            }}
+          />
+          {/* Floating blurred shapes */}
+          <div className="pointer-events-none absolute -left-20 top-10 h-72 w-72 animate-float-slow rounded-full bg-white/25 blur-3xl" />
+          <div className="pointer-events-none absolute -right-16 bottom-0 h-80 w-80 animate-float-slower rounded-full bg-accent/40 blur-3xl" />
+          <div className="pointer-events-none absolute left-1/2 top-1/2 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/20 blur-3xl" />
+
+          {/* Floating music notes */}
+          <Music2 className="pointer-events-none absolute left-[8%] top-[18%] hidden h-7 w-7 animate-float-slow text-white/40 md:block" />
+          <Sparkles className="pointer-events-none absolute right-[12%] top-[28%] hidden h-6 w-6 animate-float-slower text-white/50 md:block" />
+          <Heart className="pointer-events-none absolute left-[14%] bottom-[18%] hidden h-6 w-6 animate-float-slow text-white/40 md:block" />
+          <Mic2 className="pointer-events-none absolute right-[10%] bottom-[22%] hidden h-7 w-7 animate-float-slower text-white/40 md:block" />
+
+          <div className="relative mx-auto flex max-w-3xl flex-col items-center">
+            {/* Eyebrow pill */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-white/90 backdrop-blur-md">
+              <Sparkles className="h-3.5 w-3.5" />
+              Música feita só para vocês
+            </div>
+
+            <h2 className="mt-6 font-display text-4xl leading-[1.05] tracking-tight text-white md:text-6xl">
+              Transforme suas lembranças em uma{" "}
+              <span
+                className="bg-clip-text text-transparent"
+                style={{ backgroundImage: "linear-gradient(90deg, #fff 0%, #ffe4f1 50%, #fff 100%)" }}
+              >
+                canção única
+              </span>
+            </h2>
+
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/85 md:text-xl">
+              Conte sua história, escolha o estilo e nossa IA compõe — letra, melodia e voz — em poucos minutos. O presente mais emocionante que alguém pode receber.
+            </p>
+
+            {/* Premium CTA */}
+            <Link
+              to="/criar"
+              className="group/btn relative mt-10 inline-flex h-14 items-center justify-center gap-2 overflow-hidden rounded-full bg-white px-9 text-base font-semibold text-primary shadow-[0_20px_60px_-15px_rgba(0,0,0,0.45)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.55)]"
+            >
+              <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-accent/30 to-transparent transition-transform duration-700 group-hover/btn:translate-x-full" />
+              <span className="relative">Quero criar minha música agora</span>
+              <ArrowRight className="relative h-5 w-5 transition-transform duration-300 group-hover/btn:translate-x-1" />
+            </Link>
+
+            {/* Trust indicators */}
+            <ul className="mt-10 flex flex-wrap items-center justify-center gap-x-7 gap-y-3 text-sm font-medium text-white/95">
+              {[
+                { Icon: Clock, label: "Feito em minutos" },
+                { Icon: Wand2, label: "100% personalizado" },
+                { Icon: Gem, label: "Presente único e memorável" },
+              ].map(({ Icon, label }) => (
+                <li key={label} className="flex items-center gap-2">
+                  <span className="grid h-6 w-6 place-items-center rounded-full bg-white/15 backdrop-blur">
+                    <Icon className="h-3.5 w-3.5" />
+                  </span>
+                  {label}
+                </li>
+              ))}
+            </ul>
+
+            <p className="mt-6 text-sm text-white/70">
+              Comece agora e receba sua música personalizada em poucos minutos.
+            </p>
+          </div>
         </div>
       </section>
 
