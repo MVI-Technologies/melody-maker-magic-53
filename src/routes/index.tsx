@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Heart, Music2, Sparkles, Send, Headphones, Gift, Mic2, Check, Star } from "lucide-react";
+import { Heart, Music2, Sparkles, Send, Headphones, Gift, Mic2, Check, Star, ArrowRight, Clock, Wand2, Gem } from "lucide-react";
 import logo from "@/assets/logo.png";
 import example1 from "@/assets/example-1.jpg";
 import example2 from "@/assets/example-2.jpg";
