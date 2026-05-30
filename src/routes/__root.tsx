@@ -10,7 +10,6 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Toaster } from "../components/ui/sonner";
 
 function NotFoundComponent() {
@@ -38,9 +37,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -78,24 +74,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
+      { title: "Melody Maker AI" },
       { name: "description", content: "Melody Maker AI creates personalized songs from user briefs, delivering them via a download link." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
+      { name: "author", content: "Melody Maker" },
+      { property: "og:title", content: "Melody Maker AI" },
       { property: "og:description", content: "Melody Maker AI creates personalized songs from user briefs, delivering them via a download link." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
+      { name: "twitter:site", content: "@MelodyMaker" },
+      { name: "twitter:title", content: "Melody Maker AI" },
       { name: "twitter:description", content: "Melody Maker AI creates personalized songs from user briefs, delivering them via a download link." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/87e514e3-c4f7-451b-9f7a-e6ae48d1c534/id-preview-e092aa9a--7c645552-5b53-44c0-92e3-20be818c6103.lovable.app-1780112165316.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/87e514e3-c4f7-451b-9f7a-e6ae48d1c534/id-preview-e092aa9a--7c645552-5b53-44c0-92e3-20be818c6103.lovable.app-1780112165316.png" },
+      { property: "og:image", content: "/og-image.png" },
+      { name: "twitter:image", content: "/og-image.png" },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "stylesheet", href: appCss },
     ],
   }),
   shellComponent: RootShell,
